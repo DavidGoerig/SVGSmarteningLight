@@ -1,0 +1,52 @@
+DETAILS:
+
+Première page d'exemple de ce que on pourrait faire avec seulement les données de passages voitures + piéton et en se penchant un peu plus sur les économies faites.
+
+Le but de cette page est qu'elle soit possible de se génerer en remplissant une BDD avec des IDS pour chaque rue à traiter et des infos sur chaque rue (passage par heure voiture/piéton) et nbr de lampadaire
+
+Le XML est fait de tel sorte:
+
+<root>
+    // info nbr de lampadaire
+    <nbrLamp>
+        <idrues>nbrlampadaire<idrues>
+    </nbrLamp>
+    //pourcentage de gain pour les types de lampadaires de cette rue par rapport à l'implémentation de LEDS
+    <p1>
+        <idrues>% d'économie de cette rue par rapport aux lampadaires<idrues>
+     </p1>
+    //pourcentage de gain pour les types de lampadaires de cette rue par rapport à l'implémentation de lampadaires intelligents
+    <p2>
+        <idrues>% d'économie de cette rue par rapport aux lampadaires<idrues>
+     </p2>
+     //definition des passages horaires des rues
+     <horaire>
+        <car>
+            <idrues>nbr de voiture dans cette rue</idrues>
+        </car>
+        <piet>
+            <idrues>nbr de piéton dans cette rue</idrues>
+        </piet>
+     </horaire>
+</root>
+
+Axes de reflexion:
+
+1. Par rapport à l'affichage
+Quelle "couleurs" afficher pour les rues?
+
+Pour l'instant ce sont des paliers (10, 20, 30, 40, ...) passant.
+
+Garder ça? Faire un pourcentage en fonction du plus grand nombre de personnes qui passent?
+
+2. Pour le XML
+
+Pour l'instant j'ai mis des fiches par tranches horaires, représentant une moyenne de passage par rapport à la durée d'observation
+Changer ça et permettre de voir l'info journalière?
+
+Le XML est TRES LOURD mais il permettrais d'automatisation la création de page avec de simples scripts car c'est que de la répétition a part pour les IDS!!!! Mais il est aussi possible de créer la page HTML avec seulement une liste d'ID et tous le reste des infos dans une BDD en VRAI!
+
+3. Pour les infos
+
+J'ai bien entendu FULL BULLSHIT les chiffres d'économie, faudra téma comment on peut réellement calculer ça?
+En fonction du nombre de lampadaires * différence d'énergie gagnée (prix énergie avant - prix énergie avec les nouveau lamp).
