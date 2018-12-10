@@ -257,6 +257,23 @@
       </div>
   </div>
   <div class = "row">
+      <div class="col-lg-1 col-md-1 col-sm-1"></div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+      <p>Légende:</p>
+      <a id="b1">0 - 10</a>
+      <a id="b2">10 - 20</a>
+      <a id="b3">20 - 30</a>
+      <a id="b4">30 - 40</a>
+      <a id="b5">40 - 50</a>
+      <a id="b6">50 - 60</a>
+      <a id="b7">60 - 70</a>
+      <a id="b8">70 - 80</a>
+      <a id="b9">80 - 90</a>
+      <a id="b10">>90</a>
+      </div>
+
+  </div>
+  <div class = "row">
   <div class="panel panel-default">
       <div class="panel-heading">Ce que je peux économiser:</div>
       <div class="panel-body">
@@ -339,6 +356,19 @@
           var xml = Connect.responseText,
               xmlDoc = $.parseXML( xml ),
               $xml = $( xmlDoc )
+
+          // LEGENDE
+          $("#b1").css("background-color","#0000ff");
+          $("#b2").css("background-color","#00ffff");
+          $("#b3").css("background-color","#00ff80");
+          $("#b4").css("background-color","#bfff00");
+          $("#b5").css("background-color","#ffbf00");
+          $("#b6").css("background-color","#ff8000");
+          $("#b7").css("background-color","#ff0000");
+          $("#b8").css("background-color","#ff0000");
+          $("#b9").css("background-color","#800000");
+          $("#b10").css("background-color","yellow");
+
           /*
           INFORMATION PART!
            */
@@ -551,27 +581,27 @@
           function find_color(number_car_or_piet) {
               switch (true) {
                   case number_car_or_piet < 0:
-                      return "ffffff";
+                      return "#8000ff";
                   case number_car_or_piet >= 0 && number_car_or_piet <= 10:
-                      return "ffffff";
+                      return "#0000ff";
                   case number_car_or_piet > 10 && number_car_or_piet <= 20:
-                      return "ff0000";
+                      return "#00ffff";
                   case number_car_or_piet > 20 && number_car_or_piet <= 30:
-                      return "fff000";
+                      return "#00ff80";
                   case number_car_or_piet > 30 && number_car_or_piet <= 40:
-                      return "be00";
+                      return "#bfff00";
                   case number_car_or_piet > 40 && number_car_or_piet <= 50:
-                      return "fffff0";
+                      return "#ffff00";
                   case number_car_or_piet > 50 && number_car_or_piet <= 60:
-                      return "0fff00";
+                      return "#ffbf00";
                   case number_car_or_piet > 60 && number_car_or_piet <= 70:
-                      return "ff00f0";
+                      return "#ff8000";
                   case number_car_or_piet > 70 && number_car_or_piet <= 80:
-                      return "ff00ff";
+                      return "#ff0000";
                   case number_car_or_piet > 80 && number_car_or_piet <= 90:
-                      return "00ff00";
+                      return "#800000";
                   case number_car_or_piet > 90:
-                      return "f0f0f0";
+                      return "#4d0000";
                   default:
                       return "#ff0000";
               }
